@@ -123,11 +123,12 @@
       how we use it, which third parties we share it with, and your rights.
     </p>
     <p>
-      Mochi is built privacy-first: your AI insights are generated entirely on your
-      device, your journal is end-to-end encrypted, and we run no advertising and no
-      third-party analytics.
+      Mochi is built privacy-first: your AI insights are generated on your device by
+      default, your journal is end-to-end encrypted, and voice dictation is transcribed
+      on your device. We run no advertising and no third-party analytics. A deeper,
+      cloud-based AI reflection is available but is entirely optional and off by default.
     </p>
-    <p>Last updated: 31 May 2026</p>
+    <p>Last updated: 9 June 2026</p>
   </section>
 
   <section class="privacy-callout">
@@ -137,9 +138,18 @@
     </h2>
     <ul>
       <li>
-        <strong>AI runs on your device.</strong> Mochi analyses your journal and sleep
-        patterns using Apple's on-device intelligence. This processing never leaves your
+        <strong>AI runs on your device by default.</strong> Mochi analyses your journal and
+        sleep patterns using Apple's on-device intelligence. This processing never leaves your
         iPhone — nothing is sent to us or to any AI company.
+      </li>
+      <li>
+        <strong>Cloud AI is optional and off by default.</strong> You can choose to turn on a
+        deeper reflection powered by Claude (Anthropic). Only then — and only for the entries you
+        choose — is text sent securely for that reflection. Your raw Apple Health data is never sent.
+      </li>
+      <li>
+        <strong>Voice dictation stays on your device.</strong> If you dictate a reflection, your
+        speech is transcribed to text on your iPhone and is never recorded, saved, or sent anywhere.
       </li>
       <li>
         <strong>Your journal is end-to-end encrypted.</strong> Brain-dump entries are
@@ -148,8 +158,9 @@
       </li>
       <li>
         <strong>Apple Health stays private.</strong> If you connect Apple Health, the
-        data is used only to power your sleep and sunlight features. It is never used for
-        advertising, never sold or shared, and never written back with false data.
+        data is processed only on your device to power your sleep and sunlight features. Your raw
+        Health data never leaves your device; it is never used for advertising, never sold or
+        shared, and never written back with false data.
       </li>
       <li>
         <strong>No ads, no tracking.</strong> Mochi contains no advertising SDKs and no
@@ -171,21 +182,32 @@
       <li><strong>Account identifier</strong> — a unique, opaque user ID is created for your
         account. This is the only identifier we use to associate your synced data with you.</li>
       <li><strong>Your sleep &amp; wellness entries</strong> — the data you create in Mochi:
-        sleep logs (how you rated last night, wake times, reflection tags), wind-down missions,
+        sleep logs (how you rated last night, wake and bedtimes, reflection tags), wind-down missions,
         your XP, level and streak progress, and your chosen companion. These are stored in your
         account so they sync securely across your devices.</li>
-      <li><strong>Journal (brain-dump) entries</strong> — any free-text reflections you write.
-        These are <strong>end-to-end encrypted on your device</strong> before syncing; we store
-        only ciphertext and cannot read them (see "Your Journal Is End-to-End Encrypted" below).</li>
+      <li><strong>Journal (brain-dump) entries</strong> — any free-text reflections you write or
+        dictate. These are <strong>end-to-end encrypted on your device</strong> before syncing; we
+        store only ciphertext and cannot read them (see "Your Journal Is End-to-End Encrypted" below).</li>
       <li><strong>Apple Health data</strong> — only if you explicitly connect Apple Health.
-        With your permission, Mochi reads your sleep analysis and Time in Daylight, and writes
-        Mindful Minutes for your wind-down sessions (see "Apple Health" below).</li>
+        With your permission, Mochi reads your sleep analysis, Time in Daylight, workouts, and
+        recovery signals (heart-rate variability, resting heart rate, respiratory rate, and overnight
+        wrist temperature) — and, where relevant, cycle data — and writes Mindful Minutes for the
+        sessions you complete (see "Apple Health" below).</li>
+      <li><strong>Calendar data</strong> — only if you explicitly connect your calendar. Mochi reads
+        upcoming event times to spot early mornings and protect your wind-down, and event titles
+        solely to suggest what you might reflect on. Event titles are used only on your device and
+        are never synced or sent off it (see "Calendar" below).</li>
+      <li><strong>Your sleep schedule &amp; time zone</strong> — your target wake and sleep times and
+        your time zone are stored in your account so your reminders and your wind-down / wake-up Live
+        Activities can start at the right local time across your devices.</li>
     </ul>
     <p>
       We do not collect your location, contacts, photo library, phone number, or payment card
-      information, and we do not use advertising identifiers. If you sign in with Apple or
-      Google, those providers may pass your name during the sign-in handshake, but Mochi does
-      not retain or transmit your name beyond that initial response.
+      information, and we do not use advertising identifiers. Mochi uses the microphone only while
+      you are actively dictating, and that audio is transcribed on your device and never recorded or
+      stored (see "Voice Dictation" below). If you sign in with Apple or Google, those providers may
+      pass your name during the sign-in handshake, but Mochi does not retain or transmit your name
+      beyond that initial response.
     </p>
   </section>
 
@@ -229,8 +251,11 @@
       <li>
         <strong>What we read (with your permission):</strong> your <strong>sleep analysis</strong>
         (time in bed and sleep stages, where available from Apple Watch) to auto-fill your nightly
-        sleep log so you don't have to enter it manually, and <strong>Time in Daylight</strong>
-        (measured by Apple Watch) to automatically credit your morning-sunlight goal.
+        sleep log; <strong>Time in Daylight</strong> to automatically credit your morning-sunlight
+        goal; and, to show how your lifestyle shapes your sleep, your <strong>workouts</strong> and
+        <strong>recovery signals</strong> (heart-rate variability, resting heart rate, respiratory
+        rate, and overnight wrist temperature). For users it's relevant to, Mochi can also read
+        <strong>cycle data</strong> to offer supportive, non-clinical context.
       </li>
       <li>
         <strong>What we write (with your permission):</strong> <strong>Mindful Minutes</strong>
@@ -239,9 +264,12 @@
         never write false or estimated data into Apple Health.
       </li>
       <li>
-        <strong>How it's processed:</strong> Health data is read on your device and used solely
-        to power the sleep, sunlight, and reflection features inside Mochi. Sleep data you choose
-        to keep is stored in your own account (protected by Row Level Security, described below).
+        <strong>How it's processed:</strong> Health data is read and processed on your device to
+        power the sleep, sunlight, and reflection features inside Mochi. <strong>Your raw Apple
+        Health records never leave your device.</strong> If you turn on the optional Cloud AI
+        reflection, only a short, plain-language summary derived on your device (for example,
+        "worked out three times this week") may be included — never your raw Health data. Sleep data
+        you choose to keep is stored in your own account (protected by Row Level Security, below).
       </li>
       <li>
         <strong>What we never do:</strong> we never use Apple Health data for advertising,
@@ -258,28 +286,52 @@
   </section>
 
   <section class="highlight-section">
-    <h2>On-Device AI Processing</h2>
+    <h2>Calendar</h2>
+    <p>
+      Connecting your calendar is entirely optional and is requested only when you enable a feature
+      that uses it. With your permission, Mochi reads your upcoming events to:
+    </p>
+    <ul>
+      <li><strong>Event times</strong> — to spot an unusually early start and gently protect your
+        wind-down the night before.</li>
+      <li><strong>Event titles</strong> — used only on your device to suggest what you might like to
+        reflect on (for example, gently asking how a meeting went). Event titles are never synced,
+        never stored on our servers, and are never sent to any third party, including the optional
+        Cloud AI.</li>
+    </ul>
+    <p>
+      You can revoke calendar access at any time in iOS <strong>Settings → Privacy &amp; Security →
+      Calendars</strong>, or from <strong>Settings → Integrations</strong> inside Mochi.
+    </p>
+  </section>
+
+  <section class="highlight-section">
+    <h2>AI Processing (On-Device &amp; Optional Cloud)</h2>
     <p>
       Mochi's reflective insights — spotting themes in your journal and patterns in your
       sleep — are generated using <strong>Apple's on-device foundation models</strong> (Apple
-      Intelligence). This means:
+      Intelligence) by default. This means:
     </p>
     <ul>
       <li>
-        <strong>Your data never leaves your device for AI.</strong> The analysis runs locally on
-        your iPhone. Your journal text and sleep data are not sent to us, to Apple's servers, or
-        to any third-party AI provider for this processing.
+        <strong>By default, your data never leaves your device for AI.</strong> The analysis runs
+        locally on your iPhone. Your journal text and sleep data are not sent to us, to Apple's
+        servers, or to any third-party AI provider for this processing.
       </li>
       <li>
-        <strong>No AI training on your data.</strong> Because nothing is transmitted, your
-        content is never used to train any AI model.
+        <strong>No on-device AI training on your data.</strong> Because nothing is transmitted for
+        on-device analysis, that content is never used to train any AI model.
       </li>
       <li>
-        <strong>If we ever offer an optional cloud AI feature in future,</strong> it will be
-        turned <strong>off by default</strong> and will require your explicit, informed consent
-        before any data is sent. We will update this policy to describe exactly what is shared,
-        with whom, and why, and any such feature would route through our secure server so that no
-        AI provider key is ever included in the app.
+        <strong>Optional Cloud AI (off by default).</strong> You can choose to enable a deeper
+        reflection powered by <strong>Claude (Anthropic)</strong>. It is off by default and requires
+        your explicit consent. When enabled, the specific journal entries you choose are decrypted on
+        your device and sent — encrypted in transit, and routed through Mochi's secure server so no
+        AI key is ever in the app — to Anthropic to generate the reflection, together with a short,
+        non-identifying context summary (never your raw Apple Health data). Per Anthropic's terms,
+        your content is not used to train their models and is not retained after the request is
+        processed. You can turn this off at any time in <strong>Settings → AI</strong>, and a clear
+        consent prompt explains this before anything is sent.
       </li>
     </ul>
   </section>
@@ -301,10 +353,30 @@
         your journal entries, and neither can anyone who might access the database.
       </li>
       <li>
-        When Mochi analyses your reflections, it decrypts them only on your device, for
-        on-device processing, as described above.
+        When Mochi analyses your reflections on-device, it decrypts them only on your device. If you
+        have turned on the optional Cloud AI reflection, the entries you choose are decrypted on your
+        device and sent securely for that reflection, as described above.
       </li>
     </ul>
+  </section>
+
+  <section class="highlight-section">
+    <h2>Voice Dictation</h2>
+    <p>
+      You can dictate a reflection instead of typing it. If you do:
+    </p>
+    <ul>
+      <li>Mochi uses the microphone <strong>only while you are actively dictating</strong>.</li>
+      <li>Your speech is transcribed to text <strong>entirely on your device</strong> using Apple's
+        on-device speech recognition. The audio is never recorded, saved, or sent to Apple, to us,
+        or to any third party.</li>
+      <li>Only the resulting text becomes part of your journal entry — which is then end-to-end
+        encrypted like any other entry.</li>
+    </ul>
+    <p>
+      You can manage microphone and speech-recognition permission at any time in iOS
+      <strong>Settings → Privacy &amp; Security</strong>.
+    </p>
   </section>
 
   <section>
@@ -313,7 +385,8 @@
       <li>To provide the core features of the app (sleep logging, wind-down missions, streaks,
         XP and levels, your companion, and reflective insights).</li>
       <li>To securely store and sync your data so it persists across sessions and devices.</li>
-      <li>To schedule the gentle, local reminders you opt into (see "Notifications" below).</li>
+      <li>To schedule the gentle reminders and start the wind-down / wake-up Live Activities you opt
+        into (see "Notifications" below).</li>
     </ul>
     <p>
       We do not use your data for advertising, profiling, or any purpose beyond app functionality.
@@ -340,6 +413,13 @@
         Google's iOS SDK handles the sign-in flow and returns an identity token, your email,
         and your Google account ID, which we exchange for a Supabase session.
         <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
+      </li>
+      <li>
+        <strong>Anthropic (Claude)</strong> — used <strong>only if you turn on the optional Cloud AI
+        reflection</strong>. When enabled, the entries you choose are sent (via Mochi's secure server)
+        to Anthropic to generate a deeper reflection. Anthropic does not train on your content and
+        does not retain it after processing.
+        <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a>
       </li>
     </ul>
     <p>
@@ -371,10 +451,13 @@
   <section>
     <h2>Notifications</h2>
     <p>
-      Mochi's reminders (such as morning encouragement and sunlight nudges) are scheduled
-      <strong>locally on your device</strong>. We do not operate a push-notification server, and
-      notification content is kept generic — it never includes your journal text or other personal
-      data on your lock screen. You can turn notifications off at any time in iOS Settings.
+      Most of Mochi's reminders (such as morning encouragement and sunlight nudges) are scheduled
+      <strong>locally on your device</strong>. To start your wind-down and wake-up
+      <strong>Live Activities</strong> at the right local time, Mochi may use Apple's Push
+      Notification service; for this, your target wake/sleep times and time zone are stored in your
+      account and a push token is registered with Apple. Notification and Live Activity content is
+      kept generic — it never includes your journal text or other sensitive personal data on your
+      lock screen. You can turn notifications off at any time in iOS Settings.
     </p>
   </section>
 
@@ -384,7 +467,8 @@
     <ul>
       <li>Access the data we hold about you.</li>
       <li>Delete your account and all associated data at any time, directly in the app.</li>
-      <li>Withdraw consent for Apple Health access at any time in iOS Settings or in Mochi.</li>
+      <li>Withdraw consent for Apple Health or Calendar access at any time in iOS Settings or in Mochi.</li>
+      <li>Turn off the optional Cloud AI at any time in Settings → AI.</li>
       <li>Contact us with any privacy-related questions.</li>
     </ul>
   </section>
