@@ -125,10 +125,12 @@
     <p>
       Mochi is built privacy-first: your AI insights are generated on your device by
       default, your journal is end-to-end encrypted, and voice dictation is transcribed
-      on your device. We run no advertising and no third-party analytics. A deeper,
-      cloud-based AI reflection is available but is entirely optional and off by default.
+      on your device. We run no advertising; the only analytics are anonymous,
+      content-free usage counts you can switch off (see "Anonymous Usage Analytics"
+      below). A deeper, cloud-based AI reflection is available but is entirely optional
+      and off by default.
     </p>
-    <p>Last updated: 9 June 2026</p>
+    <p>Last updated: 11 June 2026</p>
   </section>
 
   <section class="privacy-callout">
@@ -163,8 +165,11 @@
         shared, and never written back with false data.
       </li>
       <li>
-        <strong>No ads, no tracking.</strong> Mochi contains no advertising SDKs and no
-        third-party analytics. We don't profile you or sell your data.
+        <strong>No ads, no tracking.</strong> Mochi contains no advertising SDKs and never
+        tracks you across other apps or sites. The only analytics are <strong>anonymous,
+        content-free usage counts</strong> (which features get used) so we can improve the
+        app — you can turn them off any time in <strong>Settings → Privacy</strong>. We
+        don't profile you or sell your data.
       </li>
       <li>
         <strong>You're in control.</strong> You can delete your account and all its data
@@ -380,6 +385,28 @@
   </section>
 
   <section>
+    <h2>Anonymous Usage Analytics</h2>
+    <p>
+      To understand which parts of Mochi people actually use (and which need work), the
+      app sends a small number of <strong>anonymous, content-free usage events</strong> —
+      for example "a reflection was created" or "the Progress tab was opened" — to
+      PostHog, our analytics processor, hosted in the <strong>EU</strong>.
+    </p>
+    <ul>
+      <li><strong>Anonymous:</strong> events carry a random per-install identifier only.
+        We never attach your email, account ID, name, or any other identity to them.</li>
+      <li><strong>Content-free:</strong> your journal text, Apple Health data, calendar,
+        schedule times, and anything you write or dictate are <strong>never</strong>
+        included — only event names and small labels like which tab was opened.</li>
+      <li><strong>Not tracking:</strong> these events are not used to track you across
+        other apps or websites, and are never used for advertising.</li>
+      <li><strong>Your choice:</strong> you can turn analytics off at any time in
+        <strong>Settings → Privacy → "Share anonymous usage analytics"</strong> inside
+        Mochi, and the change applies immediately.</li>
+    </ul>
+  </section>
+
+  <section>
     <h2>How We Use Your Data</h2>
     <ul>
       <li>To provide the core features of the app (sleep logging, wind-down missions, streaks,
@@ -387,6 +414,8 @@
       <li>To securely store and sync your data so it persists across sessions and devices.</li>
       <li>To schedule the gentle reminders and start the wind-down / wake-up Live Activities you opt
         into (see "Notifications" below).</li>
+      <li>To understand — in aggregate and anonymously — which features are used, so we can
+        improve the app (see "Anonymous Usage Analytics" above; opt-out in Settings → Privacy).</li>
     </ul>
     <p>
       We do not use your data for advertising, profiling, or any purpose beyond app functionality.
@@ -421,9 +450,15 @@
         does not retain it after processing.
         <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a>
       </li>
+      <li>
+        <strong>PostHog</strong> — anonymous, content-free usage analytics, hosted in the EU
+        (see "Anonymous Usage Analytics" above). You can opt out any time in Settings → Privacy.
+        <a href="https://posthog.com/privacy" target="_blank">PostHog Privacy Policy</a>
+      </li>
     </ul>
     <p>
-      Mochi uses <strong>no advertising networks and no third-party analytics services</strong>.
+      Mochi uses <strong>no advertising networks</strong>. Analytics are limited to the
+      anonymous, opt-out usage events described above.
     </p>
   </section>
 
@@ -469,6 +504,7 @@
       <li>Delete your account and all associated data at any time, directly in the app.</li>
       <li>Withdraw consent for Apple Health or Calendar access at any time in iOS Settings or in Mochi.</li>
       <li>Turn off the optional Cloud AI at any time in Settings → AI.</li>
+      <li>Turn off anonymous usage analytics at any time in Settings → Privacy.</li>
       <li>Contact us with any privacy-related questions.</li>
     </ul>
   </section>
