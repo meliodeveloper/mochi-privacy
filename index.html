@@ -130,7 +130,7 @@
       below). A deeper, cloud-based AI reflection is available but is entirely optional
       and off by default.
     </p>
-    <p>Last updated: 11 June 2026</p>
+    <p>Last updated: 7 September 2026</p>
   </section>
 
   <section class="privacy-callout">
@@ -145,9 +145,11 @@
         iPhone — nothing is sent to us or to any AI company.
       </li>
       <li>
-        <strong>Cloud AI is optional and off by default.</strong> You can choose to turn on a
-        deeper reflection powered by Claude (Anthropic). Only then — and only for the entries you
-        choose — is text sent securely for that reflection. Your raw Apple Health data is never sent.
+        <strong>Cloud AI is optional and off by default.</strong> You can choose to turn on deeper
+        reflections and Ask Mochi answers powered by Claude, an AI model run by Anthropic. Before
+        anything is sent, the app shows you exactly what would be shared and asks for your
+        permission. Only then is text sent, and your raw Apple Health data is never sent (see
+        "AI Processing" below).
       </li>
       <li>
         <strong>Voice dictation stays on your device.</strong> If you dictate a reflection, your
@@ -161,8 +163,10 @@
       <li>
         <strong>Apple Health stays private.</strong> If you connect Apple Health, the
         data is processed only on your device to power your sleep and sunlight features. Your raw
-        Health data never leaves your device; it is never used for advertising, never sold or
-        shared, and never written back with false data.
+        Health data never leaves your device; it is never used for advertising, never sold, and
+        never written back with false data. The only Health-derived information that can ever
+        leave your device is the short written summary described under "AI Processing", and only
+        if you turn on the optional Cloud AI and agree to its consent screen.
       </li>
       <li>
         <strong>No ads, no tracking.</strong> Mochi contains no advertising SDKs and never
@@ -193,6 +197,12 @@
       <li><strong>Journal (brain-dump) entries</strong> — any free-text reflections you write or
         dictate. These are <strong>end-to-end encrypted on your device</strong> before syncing; we
         store only ciphertext and cannot read them (see "Your Journal Is End-to-End Encrypted" below).</li>
+      <li><strong>Ask Mochi conversations</strong> — the questions you type to Mochi and its replies.
+        Conversation history is <strong>end-to-end encrypted on your device</strong> before syncing,
+        exactly like journal entries; we store only ciphertext. If you have turned on the optional
+        Cloud AI, each typed question is also sent to Anthropic to generate the reply (see
+        "AI Processing" below). Short facts Mochi notes from what you tell it in a chat are stored the same
+        way, end-to-end encrypted.</li>
       <li><strong>Apple Health data</strong> — only if you explicitly connect Apple Health.
         With your permission, Mochi reads your sleep analysis, Time in Daylight, workouts, and
         recovery signals (heart-rate variability, resting heart rate, respiratory rate, and overnight
@@ -271,15 +281,20 @@
       <li>
         <strong>How it's processed:</strong> Health data is read and processed on your device to
         power the sleep, sunlight, and reflection features inside Mochi. <strong>Your raw Apple
-        Health records never leave your device.</strong> If you turn on the optional Cloud AI
-        reflection, only a short, plain-language summary derived on your device (for example,
-        "worked out three times this week") may be included — never your raw Health data. Sleep data
-        you choose to keep is stored in your own account (protected by Row Level Security, below).
+        Health records never leave your device.</strong> If you turn on the optional Cloud AI,
+        only short plain-language sentences written on your device may be included: how often you
+        worked out and moved, whether your heart-rate variability and resting heart rate are trending
+        up or down, how your overnight wrist temperature compares with your own baseline, your mindful
+        minutes, and, if you track your cycle, which phase you are in — never your raw Health records
+        (see "AI Processing"). Sleep data you choose to keep is stored in your own account (protected
+        by Row Level Security, below).
       </li>
       <li>
         <strong>What we never do:</strong> we never use Apple Health data for advertising,
-        marketing, or any form of data mining; we never sell it or share it with data brokers or
-        third parties; and we never store your health information in iCloud.
+        marketing, or any form of data mining; we never sell it; we never share it with data brokers
+        or with any third party other than the optional Cloud AI processing described in
+        "AI Processing", which only happens if you explicitly turn it on; and we never store your
+        health information in iCloud.
       </li>
       <li>
         <strong>Your control:</strong> you can review and revoke Mochi's Health access at any
@@ -328,16 +343,58 @@
         on-device analysis, that content is never used to train any AI model.
       </li>
       <li>
-        <strong>Optional Cloud AI (off by default).</strong> You can choose to enable a deeper
-        reflection powered by <strong>Claude (Anthropic)</strong>. It is off by default and requires
-        your explicit consent. When enabled, the specific journal entries you choose are decrypted on
-        your device and sent — encrypted in transit, and routed through Mochi's secure server so no
-        AI key is ever in the app — to Anthropic to generate the reflection, together with a short,
-        non-identifying context summary (never your raw Apple Health data). Per Anthropic's terms,
-        your content is not used to train their models and is not retained after the request is
-        processed. You can turn this off at any time in <strong>Settings → AI</strong>, and a clear
-        consent prompt explains this before anything is sent.
+        <strong>Optional Cloud AI (off by default).</strong> You can choose to enable deeper
+        reflections and Ask Mochi answers powered by <strong>Claude</strong>, an AI model run by
+        <strong>Anthropic, PBC</strong>, a company separate from Mochi. It is off by default, it is
+        part of the Mochi Plus subscription, and it requires your explicit consent: before it can be
+        turned on, the app shows a consent screen listing exactly what is shared and asks you to
+        agree. Nothing is sent until you do. You can turn it off at any time in
+        <strong>Settings → AI → Personalization</strong>, and you can read the same list at any time
+        in <strong>Settings → AI → AI &amp; Privacy → See exactly what's shared</strong>.
       </li>
+    </ul>
+    <h3>What is sent when Cloud AI is on</h3>
+    <ul>
+      <li><strong>Your journal.</strong> The entry you open (so Mochi can write a short note on it)
+        and your recent entries whenever Mochi reflects: when you tap Reflect, when new entries have
+        arrived since the last reflection, or on the schedule you set in Scheduled reflections. They
+        are decrypted on your device only for that request.</li>
+      <li><strong>Ask Mochi.</strong> The question you type, the last few turns of that conversation,
+        short facts Mochi noted from what you told it in earlier chats, and a few lines summarising the
+        themes of your past reflections. Journal text travels with a question only if you also turn on
+        "Let Ask Mochi read my journal" in Settings: your three most recent entries, plus one-line
+        previews of recent entries inside the pattern summary.</li>
+      <li><strong>A short summary of your patterns, written on your device.</strong> How your recent
+        nights felt, your streaks and level, how steady your wake times are, your sleep type and
+        chosen tone, and, if you shared them in onboarding, your gender, life stage and the sleep
+        concerns you flagged. It can also include how long the apps you chose in Screen Time were used
+        after bedtime (never which apps) and whether tomorrow starts early (a time, never the event).
+        If you connected Apple Health, only short sentences written on your device: how often you
+        worked out and moved, whether your heart-rate variability and resting heart rate are trending
+        up or down, how your overnight wrist temperature compares with your own baseline, your mindful
+        minutes, and, if you track your cycle, which phase you are in. Never raw Health records.</li>
+    </ul>
+    <h3>What Anthropic never receives</h3>
+    <ul>
+      <li>Your name, email address, account identifier or location. Anthropic only ever sees the text
+        described above. Mochi's own server, which forwards the request, sees your account solely to
+        check your subscription and your daily limit.</li>
+      <li>Raw Apple Health records, calendar event titles, or which apps you selected in Screen Time.
+        These never leave your device at all.</li>
+      <li>Anything at all while Cloud AI is off, or if you have not agreed to the consent screen.</li>
+    </ul>
+    <h3>Who receives it, and how it is protected</h3>
+    <ul>
+      <li>The request travels encrypted in transit to Mochi's own server, which forwards it to
+        Anthropic. Anthropic's API key never ships inside the app. Mochi's server does not keep a copy
+        of the text; it only counts requests to enforce daily limits.</li>
+      <li>Anthropic processes the text solely to generate the reply. Under Anthropic's commercial
+        terms and data processing addendum, Anthropic may not train models on this content, must
+        protect it as confidential information, and automatically deletes inputs and outputs within
+        30 days (longer only where retention is required to enforce its usage policies or by law).
+        These protections are at least equivalent to those described in this policy.
+        <a href="https://www.anthropic.com/legal/commercial-terms" target="_blank">Anthropic Commercial Terms</a>
+        · <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a></li>
     </ul>
   </section>
 
@@ -411,6 +468,9 @@
     <ul>
       <li>To provide the core features of the app (sleep logging, wind-down missions, streaks,
         XP and levels, your companion, and reflective insights).</li>
+      <li>If, and only if, you turn on the optional Cloud AI: to generate deeper reflections, short
+        notes on your entries, and Ask Mochi answers by sending the data listed in "AI Processing" to
+        Anthropic. This is the only purpose for which that data is shared.</li>
       <li>To securely store and sync your data so it persists across sessions and devices.</li>
       <li>To schedule the gentle reminders and start the wind-down / wake-up Live Activities you opt
         into (see "Notifications" below).</li>
@@ -444,11 +504,19 @@
         <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>
       </li>
       <li>
-        <strong>Anthropic (Claude)</strong> — used <strong>only if you turn on the optional Cloud AI
-        reflection</strong>. When enabled, the entries you choose are sent (via Mochi's secure server)
-        to Anthropic to generate a deeper reflection. Anthropic does not train on your content and
-        does not retain it after processing.
+        <strong>Anthropic, PBC (Claude)</strong> — used <strong>only if you turn on the optional Cloud
+        AI</strong> after agreeing to the in-app consent screen. When enabled, the journal text, Ask
+        Mochi questions and pattern summary described in "AI Processing" above are sent (via Mochi's
+        own server) to Anthropic to generate the reply. Anthropic may not train on your content, must
+        keep it confidential, and deletes it within 30 days.
         <a href="https://www.anthropic.com/legal/privacy" target="_blank">Anthropic Privacy Policy</a>
+      </li>
+      <li>
+        <strong>RevenueCat</strong> — manages your Mochi Plus subscription status. It receives your
+        Mochi account identifier and your App Store purchase and entitlement data, so the app and our
+        server can check whether Plus is active. It never receives journal text, Health data, or Ask
+        Mochi conversations.
+        <a href="https://www.revenuecat.com/privacy" target="_blank">RevenueCat Privacy Policy</a>
       </li>
       <li>
         <strong>PostHog</strong> — anonymous, content-free usage analytics, hosted in the EU
@@ -503,7 +571,7 @@
       <li>Access the data we hold about you.</li>
       <li>Delete your account and all associated data at any time, directly in the app.</li>
       <li>Withdraw consent for Apple Health or Calendar access at any time in iOS Settings or in Mochi.</li>
-      <li>Turn off the optional Cloud AI at any time in Settings → AI.</li>
+      <li>Turn off the optional Cloud AI at any time in Settings → AI → Personalization.</li>
       <li>Turn off anonymous usage analytics at any time in Settings → Privacy.</li>
       <li>Contact us with any privacy-related questions.</li>
     </ul>
